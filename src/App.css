@@ -1,0 +1,85 @@
+body{
+  background-color: black;
+  
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.main{
+  background-color: black !important;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+font-size: large;
+}
+
+.col2{
+display: flex;
+flex-wrap:wrap;
+}
+
+.cont{
+margin: 5px;
+background-color: white;
+height: 25vh;
+border: 2px solid lightblue;
+box-shadow:  5px 5px rgb(0, 110, 255);
+width: 25rem;
+}
+h3{
+  color: black;
+  margin: auto;
+ position: relative;
+ font-size: larger;
+ font-weight: bold;
+ left: 10px;
+ top: 2px;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.col1{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.but{
+  margin: 5px;
+
+  width: 20vh;
+}
+.but1{
+  width: 20vh;
+  position: relative;
+  left: 39vh;
+  top: -8vh;
+}
+
+span{
+  font-size: x-large;
+  color: blue;
+ 
+}
