@@ -1,40 +1,22 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import React from "react";
+import CustomersInfo from "./CustomersInfo";
 
 function User(props) {
 
-
+       
 
 	return (
 		<>
         {props.newlist.map((output, index) => {
             return (
-               
+               <CustomersInfo 
+               key={index} 
+               listInfo={output}
+               deleteInfo={props.deleteInfo}
+               />
 
 
-                <Card  className="cont" key={index}>
-               
-                <Card.Subtitle className="mb-2  text-muted">
-               <h3> Name:{output.name}</h3>
-            </Card.Subtitle>
                 
-                    <Card.Subtitle className="mb-2  text-muted">
-                        <h3>Contact:{output.phone}</h3>
-                    </Card.Subtitle>
-                    <Card.Subtitle className="mb-2 text-muted">
-                        <h3>Location:{output.location}</h3>
-                    </Card.Subtitle>
-                    <Button  
-                  
-                    
-                    title="Edit" className="but" variant="primary" type="submit">
-                    <span>&#9999;</span>
-                 </Button>
-                    <Button  title="Delete" className="but1"  variant="primary" type="submit">
-                  <span> &#10006;</span> 
-                 </Button>
-               
-            </Card>
             );
           })}
 		</>
