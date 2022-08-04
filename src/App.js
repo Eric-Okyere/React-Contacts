@@ -22,16 +22,22 @@ const deleteInfo=(id)=>{
 	setList(list.filter((group)=>group.id !==id))
 }
 
+const handleEdit = (id, newInfo) => {
+	setList(list.map((group) => (group.id === id ? newInfo : group)));
+};
 
 	return (
 		<div className="main">
 			<Container>
 				<Row>
-					<Col className="col1" md={3}>
+					<Col className="col1" md={2}>
 				<ContactsForm newAdds={Includegroup}/>
 					</Col>
-          <Col className="col2" md={9}>
-          <Contacts newlist={list} deleteInfo={deleteInfo}/>
+          <Col className="col2" >
+          <Contacts newlist={list} 
+		  deleteInfo={deleteInfo}
+		EditCard={handleEdit}
+		  />
 					</Col>
 				</Row>
 			</Container>

@@ -20,10 +20,11 @@ function Userform(props) {
 			alert("Please fill the name inputs")
 		}
 		if(phone==="") {
-			alert("Please fill the email inputs")
+			alert("Please phone number is reqired")
 		}
 		if(location===""){
-			alert("Please fill gen the inputs")
+			alert("Please fill location the inputs")
+
 		}
 		
 

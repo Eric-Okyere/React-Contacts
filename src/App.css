@@ -47,14 +47,14 @@ flex-wrap:wrap;
 .cont{
 margin: 5px;
 background-color: white;
-height: 25vh;
+background-color: black;
 border: 2px solid lightblue;
 box-shadow:  5px 5px rgb(0, 110, 255);
-width: 25rem;
+width: 15rem;
 }
 h3{
-  color: black;
-  margin: auto;
+  color: white;
+  margin-right: 10px;
  position: relative;
  font-size: larger;
  font-weight: bold;
@@ -68,18 +68,37 @@ h3{
 
 .but{
   margin: 5px;
-
-  width: 20vh;
+  width: 15vh;
+  top: 8vh;
+  position: relative;
 }
 .but1{
-  width: 20vh;
+  width: 15vh;
   position: relative;
-  left: 39vh;
-  top: -8vh;
+  left: 22vh;
+  top: -1vh;
 }
 
 span{
   font-size: x-large;
   color: blue;
  
+}
+
+.model2{
+  background-color: rgb(0, 102, 255);
+  color: white;
+  font-weight: bolder;
+  
+}
+
+.model{
+  background-color: rgb(0, 102, 255);
+  color: white;
+  font-weight: bold;
+}
+
+.editBut{
+  background-color: black;
+  
 }

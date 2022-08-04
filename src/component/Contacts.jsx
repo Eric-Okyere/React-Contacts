@@ -7,12 +7,13 @@ function User(props) {
 
 	return (
 		<>
-        {props.newlist.map((output, index) => {
+        {props.newlist.map((item, index) => {
             return (
                <CustomersInfo 
                key={index} 
-               listInfo={output}
+               listInfo={item}
                deleteInfo={props.deleteInfo}
+               EditCard={props.EditCard}
                />
 
 
