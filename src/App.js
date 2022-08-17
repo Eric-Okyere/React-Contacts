@@ -8,9 +8,7 @@ import ContactsForm from "./component/ContactsForm.jsx";
 
 function App() {
 	const [list, setList] = useState([
-		{name:'Eric Okyere', phone:'20383', location:'Accra', id:'894'},
-		{name:'Eric ', phone:'283', location:'Cape', id:'34'},
-		{name:'Okyere', phone:'20383', location:'Yarn', id:'4'}
+		
 	]);
 
 const Includegroup=(group)=>{

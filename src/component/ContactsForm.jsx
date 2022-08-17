@@ -35,6 +35,7 @@ function Userform(props) {
 			<Form.Group className="mb-3" controlId="formBasicEmail">
 				<Form.Label>Name <span>&#9831;</span></Form.Label>
 				<Form.Control
+				required
 					type="text"
 					value={name}
 					onChange={(e) => {
@@ -45,6 +46,7 @@ function Userform(props) {
 			<Form.Group className="mb-3" controlId="formBasicEmail">
 				<Form.Label>Phone Number <span>&#9742;</span></Form.Label>
 				<Form.Control
+				required
 					type="number"
 					value={phone}
 					onChange={(e) => {
@@ -56,6 +58,7 @@ function Userform(props) {
 			<Form.Group className="mb-3" controlId="formBasicPassword">
 				<Form.Label>Location <span > &#10148;</span></Form.Label> 
 				<Form.Control
+				required
 					type="text"
 					value={location}
 					onChange={(e) => {

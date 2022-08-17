@@ -68,15 +68,15 @@ h3{
 
 .but{
   margin: 5px;
-  width: 15vh;
-  top: 8vh;
+  width: 8vh;
+  top: 5vh;
   position: relative;
 }
 .but1{
-  width: 15vh;
+  width: 8vh;
   position: relative;
-  left: 22vh;
-  top: -1vh;
+  left: 18vh;
+  top: -3vh;
 }
 
 span{
@@ -102,3 +102,6 @@ span{
   background-color: black;
   
 }
+
+
+
