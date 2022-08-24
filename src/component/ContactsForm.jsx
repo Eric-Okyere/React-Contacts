@@ -8,7 +8,6 @@ function Userform(props) {
 	const [location, setLocation] = useState("");
 	
 
-
     const Adds =(e)=>{
             e.preventDefault();
            props.newAdds({name, phone, location})
@@ -27,7 +26,6 @@ function Userform(props) {
 
 		}
 		
-
 
 		}
 	return (
@@ -56,7 +54,7 @@ function Userform(props) {
 			</Form.Group>
 
 			<Form.Group className="mb-3" controlId="formBasicPassword">
-				<Form.Label>Location <span > &#10148;</span></Form.Label> 
+				<Form.Label>Location <span> &#10148;</span></Form.Label> 
 				<Form.Control
 				required
 					type="text"
