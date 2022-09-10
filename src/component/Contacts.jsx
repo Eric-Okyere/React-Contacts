@@ -1,13 +1,19 @@
 import React from "react";
 import CustomersInfo from "./CustomersInfo";
+import { Row, Container } from "react-bootstrap";
+import { connect, useSelector } from "react-redux";
+
 
 function User(props) {
 
-       
+  const { users } = useSelector((state) => {
+		return state;
+	});
 
 	return (
-		<>
-        {props.newlist.map((item, index) => {
+		<Container>
+			<Row>
+        {users.map((item, index) => {
             return (
                <CustomersInfo 
                key={index} 
@@ -20,7 +26,8 @@ function User(props) {
                 
             );
           })}
-		</>
+          </Row>
+          </Container>
 	);
 }
 

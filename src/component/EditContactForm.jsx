@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useDispatch } from "react-redux";
+import { EditUser } from "../action/contactAction";
 
 function EditContactForm(props) {
     const [name, setName] = useState(props.listInfo.name);
 	const [phone, setPhone] = useState(props.listInfo.phone);
 	const [location, setLocation] = useState(props.listInfo.location);
-  
+    const dispatch = useDispatch();
+
+
+
     const MyChanges = (e)=>{
 		e.preventDefault();
-		props.EditCard(props.listInfo.id, { name, phone, location });
+        dispatch(EditUser({ id: props.listInfo.id, name, phone, location }));
+		// props.EditCard(props.listInfo.id, { name, phone, location });
 		setName("");
 		setPhone("");
 		setLocation("");
@@ -58,4 +64,5 @@ function EditContactForm(props) {
   )
 }
 
-export default EditContactForm
+
+export default  EditContactForm

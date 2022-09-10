@@ -4,10 +4,11 @@ import { Row, Col, Container } from "react-bootstrap";
 import Contacts from './component/Contacts.jsx';
 import './App.css';
 import ContactsForm from "./component/ContactsForm.jsx";
+import { v4 as uuid } from "uuid";
 
 
 function App() {
-	const [list, setList] = useState([
+	const [list, setList] = useState([ {Name:"Eric Okyere", PhoneNumber:"78964868", Id:uuid , Location:"Mumford" }
 		
 	]);
 

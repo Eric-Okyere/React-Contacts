@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { v4 as uuid } from "uuid";
+import { useDispatch } from "react-redux";
+import { AddNewUser } from "../action/contactAction";
+
+
 
 function Userform(props) {
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [location, setLocation] = useState("");
-	
+	const dispatch = useDispatch();
 
     const Adds =(e)=>{
             e.preventDefault();
-           props.newAdds({name, phone, location})
+			let newUser = { name, phone, location, id: uuid() };
+		dispatch(AddNewUser(newUser));
+        //    props.newAdds({name, phone, location})
+		   console.log(newUser); 
 		   setName('');
 		   setPhone('');
 		setLocation('')

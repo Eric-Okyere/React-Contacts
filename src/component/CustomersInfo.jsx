@@ -3,7 +3,8 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import {Col, Modal} from 'react-bootstrap'
 import EditContactForm from './EditContactForm';
-
+import { connect } from "react-redux";
+import { RemoveUser } from "../action/contactAction";
 
 
 function CustomersInfo(props) {
@@ -12,15 +13,17 @@ function CustomersInfo(props) {
 	const handleShow = () => setShow(true);
 	
 
-    const Delete=()=>{
-        props.deleteInfo(props.listInfo.id);
+    const Delete=(e)=>{
+      e.preventDefault();
+      props.RemoveUser(props.listInfo.id);
+      // props.deleteInfo(props.listInfo.id);
     }
 
 
    
   return (
     
-    <>
+    <div>
    
     <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton className='model2'>
@@ -56,8 +59,11 @@ function CustomersInfo(props) {
                
             </Card>
             </Col>
-    </>
+    </div>
   )
 }
 
-export default CustomersInfo
+const mapDispatch = {
+	RemoveUser,
+};
+export default connect(null, mapDispatch)(CustomersInfo);
