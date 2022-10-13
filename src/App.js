@@ -4,7 +4,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import Contacts from './component/Contacts.jsx';
 import './App.css';
 import ContactsForm from "./component/ContactsForm.jsx";
-import {collection, orderBy, query, getDocs, onSnapshot} from "firebase/firestore";
+import {collection, orderBy, query, onSnapshot} from "firebase/firestore";
 import { AddNewUser} from "./action/contactAction"
 import { useDispatch } from "react-redux";
 import {dp} from "./Firebase/config"

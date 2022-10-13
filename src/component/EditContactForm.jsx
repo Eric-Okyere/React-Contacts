@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useDispatch } from "react-redux";
-import { EditUser } from "../action/contactAction";
 import {dp} from "../Firebase/config"
 import { doc, updateDoc } from "firebase/firestore";
 
@@ -14,7 +12,7 @@ function EditContactForm(props) {
     const [name, setName] = useState(props.listInfo.name);
 	const [phone, setPhone] = useState(props.listInfo.phone);
 	const [location, setLocation] = useState(props.listInfo.location);
-    const dispatch = useDispatch();
+  
 
 
 

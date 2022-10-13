@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { v4 as uuid } from "uuid";
-
-import { collection, addDoc } from "firebase/firestore"; 
 import {dp} from "../Firebase/config"
 
 import { doc, setDoc, serverTimestamp} from "firebase/firestore";
