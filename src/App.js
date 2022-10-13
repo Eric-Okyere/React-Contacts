@@ -1,42 +1,49 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React, { useEffect} from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Contacts from './component/Contacts.jsx';
 import './App.css';
 import ContactsForm from "./component/ContactsForm.jsx";
-import { v4 as uuid } from "uuid";
+import {collection, orderBy, query, getDocs, onSnapshot} from "firebase/firestore";
+import { AddNewUser} from "./action/contactAction"
+import { useDispatch } from "react-redux";
+import {dp} from "./Firebase/config"
 
 
 function App() {
-	const [list, setList] = useState([ {Name:"Eric Okyere", PhoneNumber:"78964868", Id:uuid , Location:"Mumford" }
-		
-	]);
 
-const Includegroup=(group)=>{
-	group.id = Math.random();
-      setList([...list, {name: group.name, phone: group.phone, location: group.location, id:group.id}])
-}
+	const dispatch = useDispatch();
+	useEffect(() => {
+		try {
+			const readData = async () => {
+				const q = query(collection(dp, "Members"), orderBy("timestamp", "desc"));
+				const unsubscribe = onSnapshot(q, (querySnapshot) => {
+					const users = [];
+					querySnapshot.forEach((doc) => {
+						users.push(doc.data());
+					});
+					dispatch( AddNewUser(users));
+					console.log(users);
+				});
+			};
+			readData();
+		} catch (e) {
+			console.log(e);
+		}
+	}, []);
 
-const deleteInfo=(id)=>{
-	setList(list.filter((group)=>group.id !==id))
-}
 
-const handleEdit = (id, newInfo) => {
-	setList(list.map((group) => (group.id === id ? newInfo : group)));
-};
+
 
 	return (
 		<div className="main">
 			<Container>
 				<Row>
 					<Col className="col1" md={2}>
-				<ContactsForm newAdds={Includegroup}/>
+				<ContactsForm />
 					</Col>
           <Col className="col2" >
-          <Contacts newlist={list} 
-		  deleteInfo={deleteInfo}
-		EditCard={handleEdit}
-		  />
+          <Contacts />
 					</Col>
 				</Row>
 			</Container>

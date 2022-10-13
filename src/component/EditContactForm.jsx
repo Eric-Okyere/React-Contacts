@@ -3,6 +3,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import { EditUser } from "../action/contactAction";
+import {dp} from "../Firebase/config"
+import { doc, updateDoc } from "firebase/firestore";
+
+
+
+
 
 function EditContactForm(props) {
     const [name, setName] = useState(props.listInfo.name);
@@ -12,10 +18,17 @@ function EditContactForm(props) {
 
 
 
-    const MyChanges = (e)=>{
+    const MyChanges = async(e)=>{
 		e.preventDefault();
-        dispatch(EditUser({ id: props.listInfo.id, name, phone, location }));
-		// props.EditCard(props.listInfo.id, { name, phone, location });
+        console.log({ id: props.listInfo.id, name, phone, location })
+		// Mydispatch(editedUser({ id: props.userInfo.id, name, email, gen }));
+		try{
+			const washingtonRef = doc(dp, "Members", props.listInfo.id);
+
+// Set the "capital" field of the city 'DC'
+await updateDoc(washingtonRef, { id: props.listInfo.id, name, phone, location });
+
+		}catch(e){console.log(e)}
 		setName("");
 		setPhone("");
 		setLocation("");

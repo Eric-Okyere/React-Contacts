@@ -1,7 +1,7 @@
 import React from "react";
 import CustomersInfo from "./CustomersInfo";
 import { Row, Container } from "react-bootstrap";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 function User(props) {
@@ -11,7 +11,7 @@ function User(props) {
 	});
 
 	return (
-		<Container>
+		<Container >
 			<Row>
         {users.map((item, index) => {
             return (

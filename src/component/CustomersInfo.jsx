@@ -5,6 +5,8 @@ import {Col, Modal} from 'react-bootstrap'
 import EditContactForm from './EditContactForm';
 import { connect } from "react-redux";
 import { RemoveUser } from "../action/contactAction";
+import { doc, deleteDoc } from "firebase/firestore";
+import {dp} from "../Firebase/config.js"
 
 
 function CustomersInfo(props) {
@@ -13,17 +15,16 @@ function CustomersInfo(props) {
 	const handleShow = () => setShow(true);
 	
 
-    const Delete=(e)=>{
+    const Delete=async(e)=>{
       e.preventDefault();
-      props.RemoveUser(props.listInfo.id);
-      // props.deleteInfo(props.listInfo.id);
+      await deleteDoc(doc(dp, "Members", props.listInfo.id));
     }
 
 
    
   return (
     
-    <div>
+    <div className='fr'>
    
     <Modal show={show} onHide={handleClose}>
     <Modal.Header closeButton className='model2'>

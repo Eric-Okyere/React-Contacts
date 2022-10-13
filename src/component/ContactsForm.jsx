@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { v4 as uuid } from "uuid";
-import { useDispatch } from "react-redux";
-import { AddNewUser } from "../action/contactAction";
+
+import { collection, addDoc } from "firebase/firestore"; 
+import {dp} from "../Firebase/config"
+
+import { doc, setDoc, serverTimestamp} from "firebase/firestore";
 
 
 
@@ -11,18 +14,25 @@ function Userform(props) {
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [location, setLocation] = useState("");
-	const dispatch = useDispatch();
 
-    const Adds =(e)=>{
+
+    const Adds = async(e)=>{
             e.preventDefault();
-			let newUser = { name, phone, location, id: uuid() };
-		dispatch(AddNewUser(newUser));
-        //    props.newAdds({name, phone, location})
-		   console.log(newUser); 
-		   setName('');
-		   setPhone('');
-		setLocation('')
+			
+		let newUser = { name, phone, location, id: uuid(), timestamp: serverTimestamp(),  }; console.log(newUser); 
+		   
 		
+		try {
+			await setDoc(doc(dp, "Members", newUser.id), newUser);
+		} catch (e) {
+			console.log(e);
+		}
+	  
+		setName('');
+		setPhone('');
+	 setLocation('')
+
+
 		if(name===""){
 			alert("Please fill the name inputs")
 		}

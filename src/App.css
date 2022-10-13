@@ -103,5 +103,8 @@ span{
   
 }
 
-
+.fr{
+  display: flex !important;
+  flex-direction: column !important;
+}
 
