@@ -38,7 +38,8 @@ function CustomersInfo(props) {
 
 
 
-    <Col md={4}>
+    <Col className='tryy'>
+    <div className='divv' >
     <Card  className="cont" >
                
                 <Card.Subtitle className="mb-2  text-muted">
@@ -59,7 +60,9 @@ function CustomersInfo(props) {
                  </Button>
                
             </Card>
+            </div>
             </Col>
+            
     </div>
   )
 }

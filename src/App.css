@@ -39,9 +39,16 @@ body{
 font-size: large;
 }
 
-.col2{
-display: flex;
-flex-wrap:wrap;
+*, ::after, ::before {
+  box-sizing: none; 
+  
+
+}
+
+
+
+.row>* {
+   width: 40vh; 
 }
 
 .cont{
@@ -51,6 +58,7 @@ background-color: black;
 border: 2px solid lightblue;
 box-shadow:  5px 5px rgb(0, 110, 255);
 width: 15rem;
+display: flex !important;
 }
 h3{
   color: white;
